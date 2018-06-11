@@ -5,20 +5,23 @@ Bu proje C++ diliyle oluşturulmuş basit bir konsol uygulamasıdır.
 
 Aşağıdaki işlemlerin hepsini gerçekleştirmektedir :
 
+
 ÖĞRENCİ modülü
 
 a. Öğrenci kayıt
 
 b. Öğrenci arama
 
-  a. Öğrenci numarasına göre
+   a. Öğrenci numarasına göre
   
-  b. Öğrenci adına göre
+   b. Öğrenci adına göre
+   
 c. Öğrenci listeleme
 
   a. Bölüme göre listeleme
   
   b. Sınıfa göre listeleme
+  
 d. Öğrenci bilgileri düzeltme
 
 ÖĞRETİM ELEMANI modülü
