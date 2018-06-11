@@ -5,6 +5,7 @@ Bu proje C++ diliylr oluşturulmuş basit bir konsol uygulamasıdır.
 
 Aşağıdaki işlemlerin hepsini gerçekleştirmektedir :
 
+
 ÖĞRENCİ modülü
 
   a. Öğrenci kayıt
@@ -23,6 +24,7 @@ Aşağıdaki işlemlerin hepsini gerçekleştirmektedir :
       
   d. Öğrenci bilgileri düzeltme
   
+  
 ÖĞRETİM ELEMANI modülü
 
   a. Öğretim elemanı kayıt
@@ -33,6 +35,7 @@ Aşağıdaki işlemlerin hepsini gerçekleştirmektedir :
   
   d. Öğretim elemanı listeleme (bölüme göre)
   
+  
 DERS modülü
 
   a. Ders ekleme
@@ -42,6 +45,7 @@ DERS modülü
   c. Ders listeleme
   
   d. Ders arama (ders adına göre)
+  
   
 NOT GİRİŞ modülü
 
