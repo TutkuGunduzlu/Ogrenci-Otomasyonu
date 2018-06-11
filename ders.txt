@@ -1,0 +1,5 @@
+programlama 2 bilgisayar
+fizik 4 elektrik
+algoritma 2 bilgisayar
+kimya 3 gida
+sinyaller 3.5 bilgisayar
