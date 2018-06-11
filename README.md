@@ -1,7 +1,7 @@
 # Ogrenci-Otomasyonu
 Mühendislik Projesi Büt Ödevi
 
-Bu proje C++ diliylr oluşturulmuş basit bir konsol uygulamasıdır.
+Bu proje C++ diliyle oluşturulmuş basit bir konsol uygulamasıdır.
 
 Aşağıdaki işlemlerin hepsini gerçekleştirmektedir :
 
