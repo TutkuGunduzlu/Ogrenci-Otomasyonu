@@ -1,98 +1,98 @@
 #include <iostream>
-#include <fstream> // dosya iþlemleri için
-#include <clocale> // Türkçe karakter içn
-#include <time.h> // sleep() fonksiyonu için
-#include <unistd.h> // Türkçe karakter için
+#include <fstream> // dosya iÅŸlemleri iÃ§in
+#include <clocale> // TÃ¼rkÃ§e karakter iÃ§n
+#include <time.h> // sleep() fonksiyonu iÃ§in
+#include <unistd.h> // TÃ¼rkÃ§e karakter iÃ§in
 
 using namespace std;
 
 int main(int argc, char** argv) {
 	 
-	string no, isim, soyisim, sinif, bolum, noAra;	// ogrenci.txt dosyasýný okumak için deðiþkenler
-	string sicil, OEAd, OESoyad, OEBolum;	// ogretimelemani.txt dosyasýný okumak için deðiþkenler
-	string dersAd, dersKredi, dersBolum;	// bolum.txt dosyasýný okumak için deðiþkenler
-	string numaraDersEkle, dersEkleAd ;	// dersEkle.txt dosyasýný okumak için deðiþkenler
-	string noNotGiris, dersAdiNotGiris, puanNotGiris ;	//notEkle.txt dosyasýný okumak deðiþkenler
+	string no, isim, soyisim, sinif, bolum, noAra;	// ogrenci.txt dosyasÄ±nÄ± okumak iÃ§in deÄŸiÅŸkenler
+	string sicil, OEAd, OESoyad, OEBolum;	// ogretimelemani.txt dosyasÄ±nÄ± okumak iÃ§in deÄŸiÅŸkenler
+	string dersAd, dersKredi, dersBolum;	// bolum.txt dosyasÄ±nÄ± okumak iÃ§in deÄŸiÅŸkenler
+	string numaraDersEkle, dersEkleAd ;	// dersEkle.txt dosyasÄ±nÄ± okumak iÃ§in deÄŸiÅŸkenler
+	string noNotGiris, dersAdiNotGiris, puanNotGiris ;	//notEkle.txt dosyasÄ±nÄ± okumak deÄŸiÅŸkenler
 	int donus, m=0; 
 	
 	enbas:
 		
-	setlocale(LC_ALL, "Turkish");	// Türkçe karakter için
-	system("COLOR 3f");	// ekran renklendirme için
+	setlocale(LC_ALL, "Turkish");	// TÃ¼rkÃ§e karakter iÃ§in
+	system("COLOR 3f");	// ekran renklendirme iÃ§in
 	
 	int secim;
 	
-			cout<<"\t\t\t\tÖÐRENCÝ OTOMASYONU\n\n";
-	cout<<"\t\tXXXXXXXXXXXXXXXX ANA MENÜ XXXXXXXXXXXXXXXXX\n\n";
-	cout<<"\t\tÖÐRENCÝ ÝÞLEMLERÝ                      -> 1\n";
-	cout<<"\t\tÖÐRETÝM ELEMANI ÝÞLEMLERÝ              -> 2\n";
-	cout<<"\t\tDERS ÝÞLEMLERÝ                         -> 3\n";
-	cout<<"\t\tNOT GÝRÝÞ ÝÞLEMLERÝ                    -> 4\n";
-	cout<<"\t\tÇIKIÞ                                  -> 5\n";
+			cout<<"\t\t\t\tÃ–ÄžRENCÄ° OTOMASYONU\n\n";
+	cout<<"\t\tXXXXXXXXXXXXXXXX ANA MENÃœ XXXXXXXXXXXXXXXXX\n\n";
+	cout<<"\t\tÃ–ÄžRENCÄ° Ä°ÅžLEMLERÄ°                      -> 1\n";
+	cout<<"\t\tÃ–ÄžRETÄ°M ELEMANI Ä°ÅžLEMLERÄ°              -> 2\n";
+	cout<<"\t\tDERS Ä°ÅžLEMLERÄ°                         -> 3\n";
+	cout<<"\t\tNOT GÄ°RÄ°Åž Ä°ÅžLEMLERÄ°                    -> 4\n";
+	cout<<"\t\tÃ‡IKIÅž                                  -> 5\n";
 	cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	
-	cout<<"\n\nSeçiminiz : ";
+	cout<<"\n\nSeÃ§iminiz : ";
 	cin>>secim;
 	system("cls");
 	
 	switch(secim)
 	{
-		case 1:	// öðrenci modülü
+		case 1:	// Ã¶ÄŸrenci modÃ¼lÃ¼
 		{	
 			ogrenci:
 			
-			cout<<"\t\t\t\tÖÐRENCÝ ÝÞLERÝ\n\n";
+			cout<<"\t\t\t\tÃ–ÄžRENCÄ° Ä°ÅžLERÄ°\n\n";
 			cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
-			cout<<"\t\tÖÐRENCÝ KAYIT                          -> 1\n";
-			cout<<"\t\tÖÐRENCÝ ARAMA                          -> 2\n";
-			cout<<"\t\tÖÐRENCÝ LÝSTELEME                      -> 3\n";
-			cout<<"\t\tÖÐRENCÝ BÝLGÝLERÝNÝ DÜZELTME           -> 4\n";
-			cout<<"\t\tANA MENÜYE DÖN                         -> 5\n";
+			cout<<"\t\tÃ–ÄžRENCÄ° KAYIT                          -> 1\n";
+			cout<<"\t\tÃ–ÄžRENCÄ° ARAMA                          -> 2\n";
+			cout<<"\t\tÃ–ÄžRENCÄ° LÄ°STELEME                      -> 3\n";
+			cout<<"\t\tÃ–ÄžRENCÄ° BÄ°LGÄ°LERÄ°NÄ° DÃœZELTME           -> 4\n";
+			cout<<"\t\tANA MENÃœYE DÃ–N                         -> 5\n";
 			cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 		
-			cout<<"\n\nSeçiminiz : ";
+			cout<<"\n\nSeÃ§iminiz : ";
 			cin>>secim;
 			system("cls");
 			
 			switch(secim)
 			{
-				case 1:	// öðrenci kayýt iþlemi
+				case 1:	// Ã¶ÄŸrenci kayÄ±t iÅŸlemi
 					{
-						cout<<"*****ÖÐRENCÝ KAYIT*****"<<endl<<endl;
+						cout<<"*****Ã–ÄžRENCÄ° KAYIT*****"<<endl<<endl;
 						
-							ifstream ogrenciAra;	// dosya okuma için deðiþken belirleniyor
-							ogrenciAra.open("ogrenci.txt",ios::in);	// dosya okuma modunda açýlýyor
-							ofstream kaydet;	// yazýlacak dosyaya ait deðiþken tanýmlanýyor
-							kaydet.open("ogrenci.txt",ios::out | ios::in | ios::app);	// dosyaya yazma iþlemi için mod belirleniyor
+							ifstream ogrenciAra;	// dosya okuma iÃ§in deÄŸiÅŸken belirleniyor
+							ogrenciAra.open("ogrenci.txt",ios::in);	// dosya okuma modunda aÃ§Ä±lÄ±yor
+							ofstream kaydet;	// yazÄ±lacak dosyaya ait deÄŸiÅŸken tanÄ±mlanÄ±yor
+							kaydet.open("ogrenci.txt",ios::out | ios::in | ios::app);	// dosyaya yazma iÅŸlemi iÃ§in mod belirleniyor
 									
-							cout<<"Öðrenci Numarasý : ";
+							cout<<"Ã–ÄŸrenci NumarasÄ± : ";
 							cin>>noAra;
 							m=0;
 									do 
 							        { 	
-										if(ogrenciAra>>no>>isim>>soyisim>>sinif>>bolum)	// öðrenci dosyasý okunuyor
+										if(ogrenciAra>>no>>isim>>soyisim>>sinif>>bolum)	// Ã¶ÄŸrenci dosyasÄ± okunuyor
 										{
-											 if (noAra == no)	// girilen numara dosyada varsa kayýt eklenmiyor
+											 if (noAra == no)	// girilen numara dosyada varsa kayÄ±t eklenmiyor
 												{ 
 												system("cls");
-												cout<<"Bu numara zaten sistemde kayýtlý!"<<endl;
-												cout<<"Önceki menüye dönmek için lütfen 1'e basiniz...";
+												cout<<"Bu numara zaten sistemde kayÄ±tlÄ±!"<<endl;
+												cout<<"Ã–nceki menÃ¼ye dÃ¶nmek iÃ§in lÃ¼tfen 1'e basiniz...";
 												m++;
 												break;
 												 
 												} 
 										}
 							           
-							        } while (!ogrenciAra.eof()); // dosyanýn sonuna kadar okuma yapýlýyor
+							        } while (!ogrenciAra.eof()); // dosyanÄ±n sonuna kadar okuma yapÄ±lÄ±yor
 						
-						if(m==0){	// girilen numaraya ait kayýt yoksa kayýt ekleniyor
+						if(m==0){	// girilen numaraya ait kayÄ±t yoksa kayÄ±t ekleniyor
 						
 							cout<<"Ogrenci Adi      : ";		cin>>isim;
 							cout<<"Ogrenci Soyadi   : ";		cin>>soyisim;
 							cout<<"Ogrenci Sinifi   : ";		cin>>sinif;
 							cout<<"Ogrenci Bolumu   : ";		cin>>bolum;
-							kaydet<<noAra<<" "<<isim<<" "<<soyisim<<" "<<sinif<<" "<<bolum<<endl;	//	kullanýcýdan alýnan veriler dosyaya yazýlýyor
-							cout<<"Kayýt Baþarýlý ! "<<endl<<"Önceki menüye dönmek için lütfen 1'e basiniz...";
+							kaydet<<noAra<<" "<<isim<<" "<<soyisim<<" "<<sinif<<" "<<bolum<<endl;	//	kullanÄ±cÄ±dan alÄ±nan veriler dosyaya yazÄ±lÄ±yor
+							cout<<"KayÄ±t BaÅŸarÄ±lÄ± ! "<<endl<<"Ã–nceki menÃ¼ye dÃ¶nmek iÃ§in lÃ¼tfen 1'e basiniz...";
 							
 						}
 						
@@ -101,43 +101,43 @@ int main(int argc, char** argv) {
  					
 					cin>>donus;
 					if(donus==1){
-						system("cls");	// ekran sonraki iþlem için temizleniyor
-						goto ogrenci;	// kayýt iþlemi bitince önceki menüye yönlendiriliyor
+						system("cls");	// ekran sonraki iÅŸlem iÃ§in temizleniyor
+						goto ogrenci;	// kayÄ±t iÅŸlemi bitince Ã¶nceki menÃ¼ye yÃ¶nlendiriliyor
 					}
 					
 						break;	
 					}
-				case 2: // öðrenci arama iþlemi
+				case 2: // Ã¶ÄŸrenci arama iÅŸlemi
 					{
 						arama:
 							
-						cout<<"\t\t\t\tÖÐRENCÝ ARAMA\n\n";
+						cout<<"\t\t\t\tÃ–ÄžRENCÄ° ARAMA\n\n";
 						cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
-						cout<<"\t\tNUMARAYA GÖRE ARA                      -> 1\n";
-						cout<<"\t\tÝSÝME GÖRE ARA                         -> 2\n";
-						cout<<"\t\tÖNCEKÝ MENÜYE DÖN                      -> 3\n";
+						cout<<"\t\tNUMARAYA GÃ–RE ARA                      -> 1\n";
+						cout<<"\t\tÄ°SÄ°ME GÃ–RE ARA                         -> 2\n";
+						cout<<"\t\tÃ–NCEKÄ° MENÃœYE DÃ–N                      -> 3\n";
 						cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 						
-							cout<<"\n\nSeçiminiz : ";
+							cout<<"\n\nSeÃ§iminiz : ";
 							cin>>secim;
 							system("cls");
 						
 						switch(secim)
 						{
-							case 1:// öðrenci numarasýna göre arama
+							case 1:// Ã¶ÄŸrenci numarasÄ±na gÃ¶re arama
 								{
-									cout<<"*****ÖÐRENCÝ NO ÝLE ARAMA*****"<<endl<<endl;
-									ifstream araNo;	// dosya okuma için deðiþken belirleniyor
-									araNo.open("ogrenci.txt",ios::in);	// dosya okuma modunda açýlýyor
+									cout<<"*****Ã–ÄžRENCÄ° NO Ä°LE ARAMA*****"<<endl<<endl;
+									ifstream araNo;	// dosya okuma iÃ§in deÄŸiÅŸken belirleniyor
+									araNo.open("ogrenci.txt",ios::in);	// dosya okuma modunda aÃ§Ä±lÄ±yor
 									
-									cout<<"Öðrenci No Giriniz : ";
+									cout<<"Ã–ÄŸrenci No Giriniz : ";
 									cin>>noAra;
 									m=0;
 									do 
 							        { 	
-										if(araNo>>no>>isim>>soyisim>>sinif>>bolum)	// veriler dosyadan okunuyor, veri varsa if çalýþýyor
+										if(araNo>>no>>isim>>soyisim>>sinif>>bolum)	// veriler dosyadan okunuyor, veri varsa if Ã§alÄ±ÅŸÄ±yor
 										{
-											 if (noAra == no)	// girilen numara dosyada varsa if çalýþýyor
+											 if (noAra == no)	// girilen numara dosyada varsa if Ã§alÄ±ÅŸÄ±yor
 												{ 
 												system("cls");
 												cout<<endl<<"*****OGRENCI BILGILERI*****"<<endl;
@@ -150,10 +150,10 @@ int main(int argc, char** argv) {
 												} 
 										}
 							           
-							        } while (!araNo.eof()); // dosyanýn sonuna kadar okuma yapýlýyor
+							        } while (!araNo.eof()); // dosyanÄ±n sonuna kadar okuma yapÄ±lÄ±yor
 							        araNo.close(); //dosya kapatma
-							        if(m==0)	// m=0 ise hiç kayýt bulunamamýþtýr
-							        cout<<endl<<"Kayýt bulunamadý!"<<endl;
+							        if(m==0)	// m=0 ise hiÃ§ kayÄ±t bulunamamÄ±ÅŸtÄ±r
+							        cout<<endl<<"KayÄ±t bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -163,13 +163,13 @@ int main(int argc, char** argv) {
 									
 									break;	
 								}
-							case 2:	// öðrenci ismine göre arama
+							case 2:	// Ã¶ÄŸrenci ismine gÃ¶re arama
 								{
-									cout<<"*****ÝSÝM ÝLE ARAMA*****"<<endl<<endl;
+									cout<<"*****Ä°SÄ°M Ä°LE ARAMA*****"<<endl<<endl;
 									ifstream araIsim; 
 									araIsim.open("ogrenci.txt",ios::in);
 									string isimAra;
-									cout<<"Öðrencinin Ýsmini Giriniz : ";
+									cout<<"Ã–ÄŸrencinin Ä°smini Giriniz : ";
 									cin>>isimAra;
 									m=0;
 									do 
@@ -190,7 +190,7 @@ int main(int argc, char** argv) {
 							        } while (!araIsim.eof()); 
 							        araIsim.close(); 
 							        if(m==0)
-							        cout<<endl<<"Kayýt bulunamadý!"<<endl;
+							        cout<<endl<<"KayÄ±t bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -201,37 +201,37 @@ int main(int argc, char** argv) {
 									
 									break;
 								}
-							case 3:	// önceki menü
+							case 3:	// Ã¶nceki menÃ¼
 								{
 									goto ogrenci;
 								}
 						}	
 						break;
 					}
-				case 3:	// örenci listeleme iþlemi
+				case 3:	// Ã¶renci listeleme iÅŸlemi
 					{
 						listele:
 							
-						cout<<"\t\t\t\tÖÐRENCÝ LÝSTELEME\n\n";
+						cout<<"\t\t\t\tÃ–ÄžRENCÄ° LÄ°STELEME\n\n";
 						cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
-						cout<<"\t\tBÖLÜME GÖRE LÝSTELE                    -> 1\n";
-						cout<<"\t\tSINIFA GÖRE LÝSTELE                    -> 2\n";
-						cout<<"\t\tÖNCEKÝ MENÜYE DÖN                      -> 3\n";
+						cout<<"\t\tBÃ–LÃœME GÃ–RE LÄ°STELE                    -> 1\n";
+						cout<<"\t\tSINIFA GÃ–RE LÄ°STELE                    -> 2\n";
+						cout<<"\t\tÃ–NCEKÄ° MENÃœYE DÃ–N                      -> 3\n";
 						cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 						
-						cout<<"\n\nSeçiminiz : ";
+						cout<<"\n\nSeÃ§iminiz : ";
 						cin>>secim;
 						system("cls");
 						
 						switch(secim)
 						{
-							case 1:	// öðrenci bölümüne göre
+							case 1:	// Ã¶ÄŸrenci bÃ¶lÃ¼mÃ¼ne gÃ¶re
 								{
-									cout<<"*****BÖLÜME GÖRE ÖÐRENCÝ LÝSTELEME*****"<<endl<<endl;
+									cout<<"*****BÃ–LÃœME GÃ–RE Ã–ÄžRENCÄ° LÄ°STELEME*****"<<endl<<endl;
 									ifstream listeleBolum;
 									listeleBolum.open("ogrenci.txt",ios::in);
 									string bolumListele;
-									cout<<"Bölüm : ";
+									cout<<"BÃ¶lÃ¼m : ";
 									cin>>bolumListele;
 									cout<<endl;
 									
@@ -254,7 +254,7 @@ int main(int argc, char** argv) {
 							        } while (!listeleBolum.eof()); 
 							        listeleBolum.close();
 							        if(m==0)
-							        cout<<endl<<"Bölüm bulunamadý!"<<endl;
+							        cout<<endl<<"BÃ¶lÃ¼m bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -264,13 +264,13 @@ int main(int argc, char** argv) {
 									
 									break;
 								}
-							case 2:	// öðrenci sýnýfýna göre listeleme
+							case 2:	// Ã¶ÄŸrenci sÄ±nÄ±fÄ±na gÃ¶re listeleme
 								{
-										cout<<"*****SINIFA GÖRE ÖÐRENCÝ LÝSTELEME*****"<<endl<<endl;
+										cout<<"*****SINIFA GÃ–RE Ã–ÄžRENCÄ° LÄ°STELEME*****"<<endl<<endl;
 									ifstream listeleSinif;
 									listeleSinif.open("ogrenci.txt",ios::in);
 									string sinifListele;
-									cout<<"Sýnýf : ";
+									cout<<"SÄ±nÄ±f : ";
 									cin>>sinifListele;
 									cout<<endl;
 									m=0;
@@ -280,7 +280,7 @@ int main(int argc, char** argv) {
 							        	{
 							        		if (sinif == sinifListele) 
 										{ 
-										cout<<endl<<endl<<"*****ÖÐRENCÝ BÝLGÝLERÝ*****"<<endl;
+										cout<<endl<<endl<<"*****Ã–ÄžRENCÄ° BÄ°LGÄ°LERÄ°*****"<<endl;
 										cout<<"Ogrenci No     : "<<no<<endl;
 										cout<<"Ogrenci Adi    : "<<isim<<endl;
 										cout<<"Ogrenci Soyadi : "<<soyisim<<endl;
@@ -292,7 +292,7 @@ int main(int argc, char** argv) {
 							        } while (!listeleSinif.eof()); 
 							        listeleSinif.close(); 
 							        if(m==0)
-							        cout<<endl<<"Sýnýf bulunamadý!"<<endl;
+							        cout<<endl<<"SÄ±nÄ±f bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -301,7 +301,7 @@ int main(int argc, char** argv) {
 									}
 									break;
 								}
-							case 3:	// önceki menü
+							case 3:	// Ã¶nceki menÃ¼
 								{
 									goto ogrenci;
 								}
@@ -310,16 +310,16 @@ int main(int argc, char** argv) {
 						break;
 					}
 					
-				case 4:	// öðrenci bilgilerini düzeltme iþlemleri
+				case 4:	// Ã¶ÄŸrenci bilgilerini dÃ¼zeltme iÅŸlemleri
 					{
-						// düzeltme iþlemi için iki dosya gerekli: varolan ve geçiçi
+						// dÃ¼zeltme iÅŸlemi iÃ§in iki dosya gerekli: varolan ve geÃ§iÃ§i
 						ifstream okuEski;
 						ofstream yazYeni;
-						cout<<"Öðrenci No : ";
+						cout<<"Ã–ÄŸrenci No : ";
 						cin>>noAra;
 						cout<<endl;
 						okuEski.open("ogrenci.txt",ios::in);	// varolan dosya okunur
-						yazYeni.open("geciciOgrenci.txt",ios::out | ios::in  | ios::app);	// geçici dosyaya yazýlýr
+						yazYeni.open("geciciOgrenci.txt",ios::out | ios::in  | ios::app);	// geÃ§ici dosyaya yazÄ±lÄ±r
 								m=0;
 								do 
 							        { 	
@@ -327,13 +327,13 @@ int main(int argc, char** argv) {
 							        	{
 							        		if (no == noAra) 
 												{ 
-												cout<<endl<<endl<<"*****OGRENCI BÝLGÝSÝNÝ DÜZENLE*****"<<endl;
+												cout<<endl<<endl<<"*****OGRENCI BÄ°LGÄ°SÄ°NÄ° DÃœZENLE*****"<<endl;
 												cout<<"Ogrenci No     : ";		cin>>no;
 												cout<<"Ogrenci Adi    : ";		cin>>isim;
 												cout<<"Ogrenci Soyadi : ";		cin>>soyisim;
 												cout<<"Ogrenci Sinif  : ";		cin>>sinif;
 												cout<<"Ogrenci Bolumu : ";		cin>>bolum; 
-												// varolan dosyada bulunan bilgiler düzenlenince geçici dosyaya yazýlýr.
+												// varolan dosyada bulunan bilgiler dÃ¼zenlenince geÃ§ici dosyaya yazÄ±lÄ±r.
 												yazYeni<<no<<" "<<" "<<" "<<isim<<" "<<soyisim<<" "<<sinif<<" "<<bolum<<endl ;
 												m++; 
 												} 
@@ -346,12 +346,12 @@ int main(int argc, char** argv) {
 							          
 							          okuEski.close(); 
 							          yazYeni.close();
-							          remove("ogrenci.txt");	// varolan dosya kaldýrýlýr.
-							          rename("geciciOgrenci.txt" , "ogrenci.txt");		// geçici dosyanýn adý eski dosyayla deðiþtirilir
+							          remove("ogrenci.txt");	// varolan dosya kaldÄ±rÄ±lÄ±r.
+							          rename("geciciOgrenci.txt" , "ogrenci.txt");		// geÃ§ici dosyanÄ±n adÄ± eski dosyayla deÄŸiÅŸtirilir
 							          if(m==0)
-							        	cout<<endl<<"Düzenlenecek kayýt bulunamadý!"<<endl;
+							        	cout<<endl<<"DÃ¼zenlenecek kayÄ±t bulunamadÄ±!"<<endl;
 							        else
-							        	cout<<"Kayýt düzenlendi."<<endl;
+							        	cout<<"KayÄ±t dÃ¼zenlendi."<<endl;
 							        	cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -362,7 +362,7 @@ int main(int argc, char** argv) {
 						break;
 					}
 					
-				case 5:// önceki menü
+				case 5:// Ã¶nceki menÃ¼
 				{
 					goto enbas;
 				}
@@ -370,28 +370,28 @@ int main(int argc, char** argv) {
 			break;
 		}//case1
 		
-		case 2:	// öðretim elemaný modülü
+		case 2:	// Ã¶ÄŸretim elemanÄ± modÃ¼lÃ¼
 			{
 				ogretimElemani:
 					
-				cout<<"\t\t\tÖÐRETÝM ELEMANI ÝÞLEMLERÝ\n\n";
+				cout<<"\t\t\tÃ–ÄžRETÄ°M ELEMANI Ä°ÅžLEMLERÄ°\n\n";
 			cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
-			cout<<"\t\tÖÐRETÝM ELEMANI KAYIT                  -> 1\n";
-			cout<<"\t\tÖÐRETÝM ELEMANI ARAMA                  -> 2\n";
-			cout<<"\t\tÖÐRETÝM ELEMANI BÝLGÝLERÝ DÜZELT       -> 3\n";
-			cout<<"\t\tÖÐRETÝM ELEMANI LÝSTELEME              -> 4\n";
-			cout<<"\t\tANA MENÜYE DÖN                         -> 5\n";
+			cout<<"\t\tÃ–ÄžRETÄ°M ELEMANI KAYIT                  -> 1\n";
+			cout<<"\t\tÃ–ÄžRETÄ°M ELEMANI ARAMA                  -> 2\n";
+			cout<<"\t\tÃ–ÄžRETÄ°M ELEMANI BÄ°LGÄ°LERÄ° DÃœZELT       -> 3\n";
+			cout<<"\t\tÃ–ÄžRETÄ°M ELEMANI LÄ°STELEME              -> 4\n";
+			cout<<"\t\tANA MENÃœYE DÃ–N                         -> 5\n";
 			cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 		
-			cout<<"\n\nSeçiminiz : ";
+			cout<<"\n\nSeÃ§iminiz : ";
 			cin>>secim;
 			system("cls");
 				
 				switch(secim)
 				{
-					case 1:	// öðretim elemaný kayýt
+					case 1:	// Ã¶ÄŸretim elemanÄ± kayÄ±t
 						{
-							cout<<"*****ÖÐRETÝM ELEMANI KAYIT*****"<<endl<<endl;
+							cout<<"*****Ã–ÄžRETÄ°M ELEMANI KAYIT*****"<<endl<<endl;
 							ofstream kaydetOE;
 							kaydetOE.open("ogretimElemani.txt",ios::out | ios::in | ios::app);
 							
@@ -409,8 +409,8 @@ int main(int argc, char** argv) {
 											 if (sicil == sicilAra) 
 												{ 
 													system("cls");
-													cout<<"Bu sicil no zaten sistemde kayýtlý!"<<endl;
-													cout<<"Önceki menüye dönmek için lütfen 1'e basiniz...";
+													cout<<"Bu sicil no zaten sistemde kayÄ±tlÄ±!"<<endl;
+													cout<<"Ã–nceki menÃ¼ye dÃ¶nmek iÃ§in lÃ¼tfen 1'e basiniz...";
 													m++;
 													break;
 												} 
@@ -419,11 +419,11 @@ int main(int argc, char** argv) {
 							        } while (!araSicil.eof()); 
 							        if(m==0)
 							        {
-												cout<<"Adý       : ";   cin>>OEAd;
-												cout<<"Soyadý    : ";	cin>>OESoyad;
-												cout<<"Bölüm     : ";	cin>>OEBolum;
+												cout<<"AdÄ±       : ";   cin>>OEAd;
+												cout<<"SoyadÄ±    : ";	cin>>OESoyad;
+												cout<<"BÃ¶lÃ¼m     : ";	cin>>OEBolum;
 												kaydetOE<<sicilAra<<" "<<OEAd<<" "<<OESoyad<<" "<<OEBolum<<endl;
-												cout<<"Kayýt Baþarýlý ! "<<endl<<"Önceki menüye dönmek için lütfen 1'e basiniz...";
+												cout<<"KayÄ±t BaÅŸarÄ±lÄ± ! "<<endl<<"Ã–nceki menÃ¼ye dÃ¶nmek iÃ§in lÃ¼tfen 1'e basiniz...";
 									}
 							        araSicil.close(); 
 									kaydetOE.close(); 
@@ -438,7 +438,7 @@ int main(int argc, char** argv) {
 						}
 					case 2:	// sicil no ile arama
 						{
-							cout<<"*****SÝCÝL NO ÝLE ARAMA*****"<<endl<<endl;
+							cout<<"*****SÄ°CÄ°L NO Ä°LE ARAMA*****"<<endl<<endl;
 									ifstream araSicil;
 									araSicil.open("ogretimElemani.txt",ios::in);
 									string sicilAra;
@@ -452,11 +452,11 @@ int main(int argc, char** argv) {
 											 if (sicil == sicilAra) 
 												{ 
 												system("cls");
-												cout<<endl<<"*****OGRETÝM ELEMANI BILGILERI*****"<<endl;
+												cout<<endl<<"*****OGRETÄ°M ELEMANI BILGILERI*****"<<endl;
 												cout<<"Sicil No  : "<<sicil<<endl;
-												cout<<"Adý       : "<<OEAd<<endl;
-												cout<<"Soyadý    : "<<OESoyad<<endl;
-												cout<<"Bölüm     : "<<OEBolum<<endl;
+												cout<<"AdÄ±       : "<<OEAd<<endl;
+												cout<<"SoyadÄ±    : "<<OESoyad<<endl;
+												cout<<"BÃ¶lÃ¼m     : "<<OEBolum<<endl;
 												m++; 
 												} 
 										}
@@ -464,7 +464,7 @@ int main(int argc, char** argv) {
 							        } while (!araSicil.eof()); 
 							        araSicil.close(); 
 							        if(m==0)
-							        cout<<endl<<"Kayýt bulunamadý!"<<endl;
+							        cout<<endl<<"KayÄ±t bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -473,7 +473,7 @@ int main(int argc, char** argv) {
 						}	
 							break;
 						}
-					case 3:	// öðretim elemaný bilgilerini düzeltme
+					case 3:	// Ã¶ÄŸretim elemanÄ± bilgilerini dÃ¼zeltme
 					{
 							ifstream okuOE;
 							ofstream yazOE;
@@ -490,11 +490,11 @@ int main(int argc, char** argv) {
 							        	{
 							        		if (sicil == sicilNo ) 
 												{ 
-												cout<<endl<<endl<<"*****OGRENTÝM ELEMANI BÝLGÝLERÝNÝ DÜZENLEME*****"<<endl;
+												cout<<endl<<endl<<"*****OGRENTÄ°M ELEMANI BÄ°LGÄ°LERÄ°NÄ° DÃœZENLEME*****"<<endl;
 												cout<<"Sicil No  : ";		cin>>sicil;
 												cout<<"Ad    	 : ";		cin>>OEAd;
 												cout<<"Soyad     : ";		cin>>OESoyad;
-												cout<<"Bölüm     : ";		cin>>OEBolum;
+												cout<<"BÃ¶lÃ¼m     : ";		cin>>OEBolum;
 												
 												yazOE<<sicil<<" "<<OEAd<<" "<<OESoyad<<" "<<OEBolum<<endl ;
 												m++; 
@@ -511,9 +511,9 @@ int main(int argc, char** argv) {
 							          remove("ogretimElemani.txt");
 							          rename("geciciOE.txt" , "ogretimElemani.txt");
 							          if(m==0)
-							        	cout<<endl<<"Düzenlenecek kayýt bulunamadý!"<<endl;
+							        	cout<<endl<<"DÃ¼zenlenecek kayÄ±t bulunamadÄ±!"<<endl;
 							          else
-							          	cout<<"Kayýt Düzenlendi."<<endl;
+							          	cout<<"KayÄ±t DÃ¼zenlendi."<<endl;
 							        	cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -522,13 +522,13 @@ int main(int argc, char** argv) {
 									}
 							break;
 						}
-					case 4:	// bölüme göre öðretim elemaný listeleme
+					case 4:	// bÃ¶lÃ¼me gÃ¶re Ã¶ÄŸretim elemanÄ± listeleme
 						{
-								cout<<"*****BÖLÜME GÖRE ÖÐRETÝM ELEMANI LÝSTELEME*****"<<endl<<endl;
+								cout<<"*****BÃ–LÃœME GÃ–RE Ã–ÄžRETÄ°M ELEMANI LÄ°STELEME*****"<<endl<<endl;
 									ifstream listeleOE;
 									listeleOE.open("ogretimElemani.txt",ios::in);
 									string bolumBul;
-									cout<<"Bölüm : ";
+									cout<<"BÃ¶lÃ¼m : ";
 									cin>>bolumBul;
 									m=0;
 									do 
@@ -537,18 +537,18 @@ int main(int argc, char** argv) {
 							        	{
 							        		 if (OEBolum == bolumBul) 
 										{ 
-										cout<<endl<<endl<<"*****ÖÐRETÝM ELEMANI BÝLGÝLERÝ LÝSTELEME*****"<<endl;
+										cout<<endl<<endl<<"*****Ã–ÄžRETÄ°M ELEMANI BÄ°LGÄ°LERÄ° LÄ°STELEME*****"<<endl;
 										cout<<"Sicil No  : "<<sicil<<endl;		
 										cout<<"Ad    	 : "<<OEAd<<endl;	
 										cout<<"Soyad     : "<<OESoyad<<endl;	
-										cout<<"Bölüm     : "<<OEBolum<<endl;		
+										cout<<"BÃ¶lÃ¼m     : "<<OEBolum<<endl;		
 										m++; 
 										} 
 										}
 							        } while (!listeleOE.eof()); 
 							        listeleOE.close(); 
 							        if(m==0)
-							        cout<<endl<<"Bölüm bulunamadý!"<<endl;
+							        cout<<endl<<"BÃ¶lÃ¼m bulunamadÄ±!"<<endl;
 									cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -557,7 +557,7 @@ int main(int argc, char** argv) {
 									}
 							break;
 						}
-					case 5:// önceki menü
+					case 5:// Ã¶nceki menÃ¼
 						{
 							goto enbas;
 						}	
@@ -565,19 +565,19 @@ int main(int argc, char** argv) {
 				break;
 			}//case2
 		
-		case 3:	// ders modülü
+		case 3:	// ders modÃ¼lÃ¼
 			{
 				ders:
-					cout<<"\t\t\t\tDERS ÝÞLEMLERÝ\n\n";
+					cout<<"\t\t\t\tDERS Ä°ÅžLEMLERÄ°\n\n";
 				cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
 				cout<<"\t\tDERS EKLEME                            -> 1\n";
-				cout<<"\t\tDERS BÝLGÝLERÝNÝ GÜNCELLEME            -> 2\n";
-				cout<<"\t\tDERS LÝSTELEME                         -> 3\n";
+				cout<<"\t\tDERS BÄ°LGÄ°LERÄ°NÄ° GÃœNCELLEME            -> 2\n";
+				cout<<"\t\tDERS LÄ°STELEME                         -> 3\n";
 				cout<<"\t\tDERS ARAMA                             -> 4\n";
-				cout<<"\t\tANA MENÜYE DÖN                         -> 5\n";
+				cout<<"\t\tANA MENÃœYE DÃ–N                         -> 5\n";
 				cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	
-				cout<<"\n\nSeçiminiz : ";
+				cout<<"\n\nSeÃ§iminiz : ";
 				cin>>secim;
 				system("cls");
 				
@@ -588,13 +588,13 @@ int main(int argc, char** argv) {
 							cout<<"*****DERS KAYIT*****"<<endl<<endl;
 					ofstream dersEkle;
 					dersEkle.open("ders.txt",ios::out | ios::in | ios::app);
-					cout<<"Ders Adý       : ";	   	cin>>dersAd;
+					cout<<"Ders AdÄ±       : ";	   	cin>>dersAd;
 					cout<<"Ders Kredisi   : ";		cin>>dersKredi;
-					cout<<"Dersin Bölümü  : ";		cin>>dersBolum;
+					cout<<"Dersin BÃ¶lÃ¼mÃ¼  : ";		cin>>dersBolum;
 				
 					dersEkle<<dersAd<<" "<<dersKredi<<" "<<dersBolum<<endl;
 					dersEkle.close(); 
- 					cout<<"Kayýt Baþarýlý ! "<<endl<<"Önceki menüye dönmek için lütfen 1'e basiniz...";
+ 					cout<<"KayÄ±t BaÅŸarÄ±lÄ± ! "<<endl<<"Ã–nceki menÃ¼ye dÃ¶nmek iÃ§in lÃ¼tfen 1'e basiniz...";
 					cin>>donus;
 					
 					if(donus==1){
@@ -603,11 +603,11 @@ int main(int argc, char** argv) {
 						}
 							break;		
 						}
-					case 2:	// der bilgilerini güncelleme
+					case 2:	// der bilgilerini gÃ¼ncelleme
 						{
-							ifstream okuEskiDers;//dosya okuma ve dosyayý acma 
+							ifstream okuEskiDers;//dosya okuma ve dosyayÄ± acma 
 							ofstream yazYeniDers;
-							cout<<"Ders Ýsmi : ";
+							cout<<"Ders Ä°smi : ";
 							string dersIsim;
 							cin>>dersIsim;
 							cout<<endl;
@@ -620,10 +620,10 @@ int main(int argc, char** argv) {
 							        	{
 							        		if (dersIsim == dersAd) 
 												{ 
-												cout<<endl<<endl<<"*****DERS BÝLGÝSÝNÝ DÜZENLE*****"<<endl;
-												cout<<"Ders Adý        : ";		cin>>dersAd;
+												cout<<endl<<endl<<"*****DERS BÄ°LGÄ°SÄ°NÄ° DÃœZENLE*****"<<endl;
+												cout<<"Ders AdÄ±        : ";		cin>>dersAd;
 												cout<<"Ders Kredisi    : ";		cin>>dersKredi;
-												cout<<"Dersin Bölümü   : ";		cin>>dersBolum;
+												cout<<"Dersin BÃ¶lÃ¼mÃ¼   : ";		cin>>dersBolum;
 											
 												yazYeniDers<<dersAd<<" "<<dersKredi<<" "<<dersBolum<<endl ;
 												m++; 
@@ -640,9 +640,9 @@ int main(int argc, char** argv) {
 							          remove("ders.txt");
 							          rename("geciciDers.txt" , "ders.txt");
 							          if(m==0)
-							        	cout<<endl<<"Düzenlenecek kayýt bulunamadý!"<<endl;
+							        	cout<<endl<<"DÃ¼zenlenecek kayÄ±t bulunamadÄ±!"<<endl;
 							          else
-							          	cout<<"Kayýt düzenlendi"<<endl;
+							          	cout<<"KayÄ±t dÃ¼zenlendi"<<endl;
 							        	cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -653,7 +653,7 @@ int main(int argc, char** argv) {
 						}
 					case 3:	// ders listeleme
 						{
-								cout<<"*****DERS LÝSTELEME*****"<<endl<<endl;
+								cout<<"*****DERS LÄ°STELEME*****"<<endl<<endl;
 									ifstream listeleDers;
 									listeleDers.open("ders.txt",ios::in);
 								m=0;
@@ -662,16 +662,16 @@ int main(int argc, char** argv) {
 							        	if(listeleDers>>dersAd>>dersKredi>>dersBolum)
 							        	{
 											cout<<endl<<"*****DERS*****"<<endl;
-											cout<<"Ders Adý       : "<<dersAd<<endl;
+											cout<<"Ders AdÄ±       : "<<dersAd<<endl;
 											cout<<"Ders Kredisi   : "<<dersKredi<<endl;
-											cout<<"Dersin Bölümü  : "<<dersBolum<<endl;
+											cout<<"Dersin BÃ¶lÃ¼mÃ¼  : "<<dersBolum<<endl;
 											m++; 
 										}
 							           
 							        } while (!listeleDers.eof()); 
 							        listeleDers.close(); 
 							        if(m==0)
-							        cout<<endl<<"Ders bulunamadý!"<<endl;
+							        cout<<endl<<"Ders bulunamadÄ±!"<<endl;
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -682,11 +682,11 @@ int main(int argc, char** argv) {
 						}
 					case 4:	// ders arama
 						{	
-								cout<<"*****DERS ADI ÝLE ARAMA*****"<<endl<<endl;
+								cout<<"*****DERS ADI Ä°LE ARAMA*****"<<endl<<endl;
 									ifstream araDers;
 									araDers.open("ders.txt",ios::in);
 									string dersAra;
-									cout<<"Ders Adýný Giriniz : ";
+									cout<<"Ders AdÄ±nÄ± Giriniz : ";
 									cin>>dersAra;
 									m=0;
 									do 
@@ -695,10 +695,10 @@ int main(int argc, char** argv) {
 										{
 											 if (dersAra == dersAd) 
 										{ 
-											cout<<endl<<"*****DERS BÝLGÝLERÝ*****"<<endl;
-											cout<<"Ders Adý       : "<<dersAd<<endl;
+											cout<<endl<<"*****DERS BÄ°LGÄ°LERÄ°*****"<<endl;
+											cout<<"Ders AdÄ±       : "<<dersAd<<endl;
 											cout<<"Ders Kredisi   : "<<dersKredi<<endl;
-											cout<<"Dersin Bölümü  : "<<dersBolum<<endl;
+											cout<<"Dersin BÃ¶lÃ¼mÃ¼  : "<<dersBolum<<endl;
 											m++; 
 										} 
 										} 
@@ -706,7 +706,7 @@ int main(int argc, char** argv) {
 							        } while (!araDers.eof());
 							        araDers.close();
 							        if(m==0)
-							        cout<<endl<<"Ders bulunamadý!";
+							        cout<<endl<<"Ders bulunamadÄ±!";
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -716,7 +716,7 @@ int main(int argc, char** argv) {
 							
 							break;
 						}
-					case 5:// önceki menü
+					case 5:// Ã¶nceki menÃ¼
 						{
 							goto enbas;
 						}
@@ -725,27 +725,27 @@ int main(int argc, char** argv) {
 				break;
 			}//case 3
 		
-		case 4:	// not giriþ modülü
+		case 4:	// not giriÅŸ modÃ¼lÃ¼
 			{
 				notgiris:
-					cout<<"\t\t\t\tNOT GÝRÝÞÝ\n\n";
+					cout<<"\t\t\t\tNOT GÄ°RÄ°ÅžÄ°\n\n";
 				cout<<"\t\tXXXXXXXXXXXXXXXX MENU XXXXXXXXXXXXXXXXXXXXX\n\n";
-				cout<<"\t\tÖÐRENCÝYE DERS EKLEME                  -> 1\n";
-				cout<<"\t\tÖÐRENCÝ NOT GÝRÝÞÝ                     -> 2\n";
-				cout<<"\t\tÖÐRENCÝ DERS LÝSTELEME                 -> 3\n";
-				cout<<"\t\tKARNE OLUÞTURMA VE GÖRSELLEÞTÝRME      -> 4\n";
-				cout<<"\t\tANA MENÜYE DÖN                         -> 5\n";
+				cout<<"\t\tÃ–ÄžRENCÄ°YE DERS EKLEME                  -> 1\n";
+				cout<<"\t\tÃ–ÄžRENCÄ° NOT GÄ°RÄ°ÅžÄ°                     -> 2\n";
+				cout<<"\t\tÃ–ÄžRENCÄ° DERS LÄ°STELEME                 -> 3\n";
+				cout<<"\t\tKARNE OLUÅžTURMA VE GÃ–RSELLEÅžTÄ°RME      -> 4\n";
+				cout<<"\t\tANA MENÃœYE DÃ–N                         -> 5\n";
 				cout<<"\n\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	
-				cout<<"\n\nSeçiminiz : ";
+				cout<<"\n\nSeÃ§iminiz : ";
 				cin>>secim;
 				system("cls");
 				
 				switch(secim)
 				{
-					case 1:	// öðrenciye ders ekleme
+					case 1:	// Ã¶ÄŸrenciye ders ekleme
 						{
-							cout<<"*****ÖÐRENCÝYE DERS EKLEME*****"<<endl<<endl;
+							cout<<"*****Ã–ÄžRENCÄ°YE DERS EKLEME*****"<<endl<<endl;
 									ifstream okuOgrenci;
 									okuOgrenci.open("ogrenci.txt",ios::in);
 									ifstream okuDers;
@@ -755,24 +755,24 @@ int main(int argc, char** argv) {
 									
 									string numara, derss;
 									int n=0;
-									cout<<"Öðrenci Numarasýný Giriniz : ";
+									cout<<"Ã–ÄŸrenci NumarasÄ±nÄ± Giriniz : ";
 									cin>>numara;
-									cout<<"Ders Adýný Giriniz : ";
+									cout<<"Ders AdÄ±nÄ± Giriniz : ";
 									cin>>derss;
 									m=0;
 									do 
 							        { 	
 										if(okuOgrenci>>no>>isim>>soyisim>>sinif>>bolum)	
 										{
-											 if (numara == no)	// girilen numara ogrenci.txt dosyasýnda varsa
+											 if (numara == no)	// girilen numara ogrenci.txt dosyasÄ±nda varsa
 											{ 
 													do 
 											        { 	
 														if(okuDers>>dersAd>>dersKredi>>dersBolum )
 														{
-															 if ( derss == dersAd) // girilen ders ders.txt dosyasýnda varsa
+															 if ( derss == dersAd) // girilen ders ders.txt dosyasÄ±nda varsa
 															{ 
-																	yazDersEkle<<numara<<" "<<derss<<endl;	// dersEkle.txt dosyasýna yazýlýr
+																	yazDersEkle<<numara<<" "<<derss<<endl;	// dersEkle.txt dosyasÄ±na yazÄ±lÄ±r
 																	 n++;	
 															}
 														} 
@@ -785,12 +785,12 @@ int main(int argc, char** argv) {
 							        okuDers.close(); 
 							        okuOgrenci.close();
 							        yazDersEkle.close();
-							        if(m==0)	// öðrenci no sistemde kayýtlý deðilse ekleme yapýlamaz.
-							       		cout<<endl<<"Kayýtlý öðrenci bulunamadý!";
-							        else if(n==0)	// sistemdeki dersler haricinde ders girildiðinde ekleme yapýlamaz.
-							        	cout<<endl<<"Yanlýþ(sistemde olmayan) ders adý girdiniz!";
+							        if(m==0)	// Ã¶ÄŸrenci no sistemde kayÄ±tlÄ± deÄŸilse ekleme yapÄ±lamaz.
+							       		cout<<endl<<"KayÄ±tlÄ± Ã¶ÄŸrenci bulunamadÄ±!";
+							        else if(n==0)	// sistemdeki dersler haricinde ders girildiÄŸinde ekleme yapÄ±lamaz.
+							        	cout<<endl<<"YanlÄ±ÅŸ(sistemde olmayan) ders adÄ± girdiniz!";
 							        else
-							        	cout<<endl<<"Öðrenciye ders eklendi";
+							        	cout<<endl<<"Ã–ÄŸrenciye ders eklendi";
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -799,9 +799,9 @@ int main(int argc, char** argv) {
 									}
 							break;		
 						}
-					case 2:	//öðrencinin aldýðý ders için not giriþi
+					case 2:	//Ã¶ÄŸrencinin aldÄ±ÄŸÄ± ders iÃ§in not giriÅŸi
 						{
-							cout<<"*****ÖÐRENCÝYE NOT EKLEME*****"<<endl<<endl;
+							cout<<"*****Ã–ÄžRENCÄ°YE NOT EKLEME*****"<<endl<<endl;
 									ifstream okuOgrenci2; 
 									okuOgrenci2.open("ogrenci.txt",ios::in);
 									
@@ -813,26 +813,26 @@ int main(int argc, char** argv) {
 									
 									string numara2, derss2;
 									int n=0, puan;
-									cout<<"Öðrenci Numarasýný Giriniz : ";
+									cout<<"Ã–ÄŸrenci NumarasÄ±nÄ± Giriniz : ";
 									cin>>numara2;
-									cout<<"Ders Adýný Giriniz : ";
+									cout<<"Ders AdÄ±nÄ± Giriniz : ";
 									cin>>derss2;
-									cout<<"Öðrencini Notunu Giriniz : ";
+									cout<<"Ã–ÄŸrencini Notunu Giriniz : ";
 									cin>>puan;
 									m=0;
 									do 
 							        { 	
 										if(okuOgrenci2>>no>>isim>>soyisim>>sinif>>bolum)
 										{
-											 if (numara2 == no)	// girilen numara ogrenci.txt dosyasýnda varsa
+											 if (numara2 == no)	// girilen numara ogrenci.txt dosyasÄ±nda varsa
 											{ 
 													do 
 											        { 	
 														if(okuDersEkle>>numaraDersEkle>>dersEkleAd )
 														{
-															 if ( derss2 == dersEkleAd && numara2 == numaraDersEkle )	// öðrenci eðer belirtilen dersi almýþsa ancak not eklenebilir
+															 if ( derss2 == dersEkleAd && numara2 == numaraDersEkle )	// Ã¶ÄŸrenci eÄŸer belirtilen dersi almÄ±ÅŸsa ancak not eklenebilir
 															{ 
-																	yazNotEkle<<numara2<<" "<<derss2<<" "<<puan<<endl;	// öðrencinin notu notEkle.txt ye yazýlýr.
+																	yazNotEkle<<numara2<<" "<<derss2<<" "<<puan<<endl;	// Ã¶ÄŸrencinin notu notEkle.txt ye yazÄ±lÄ±r.
 																	 n++;	
 																	 break;
 															}
@@ -847,12 +847,12 @@ int main(int argc, char** argv) {
 							        okuDersEkle.close(); 
 							        okuOgrenci2.close();
 							        yazNotEkle.close();
-							        if(m==0)	// girilen numara sistemde kayýtlý deðilse not eklenemez.
-							       		cout<<endl<<"Kayýtlý öðrenci bulunamadý!";
-							        else if(n==0)	// girilen ders sistemde kayýtlý deðilse not eklenemez.
-							        	cout<<endl<<"Yanlýþ(sistemde olmayan) ders adý girdiniz!";
+							        if(m==0)	// girilen numara sistemde kayÄ±tlÄ± deÄŸilse not eklenemez.
+							       		cout<<endl<<"KayÄ±tlÄ± Ã¶ÄŸrenci bulunamadÄ±!";
+							        else if(n==0)	// girilen ders sistemde kayÄ±tlÄ± deÄŸilse not eklenemez.
+							        	cout<<endl<<"Ã–ÄŸrenci bu dersi almamÄ±ÅŸtÄ±r, not eklenemez!";
 							        else
-							        	cout<<endl<<"Öðrenciye not eklendi";
+							        	cout<<endl<<"Ã–ÄŸrenciye not eklendi";
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -863,13 +863,13 @@ int main(int argc, char** argv) {
 							
 							break;
 						}
-					case 3:	// öðrenci ders listeleme
+					case 3:	// Ã¶ÄŸrenci ders listeleme
 						{
-							cout<<"*****ÖÐRENCÝ DERS LÝSTELEME*****"<<endl<<endl;
+							cout<<"*****Ã–ÄžRENCÄ° DERS LÄ°STELEME*****"<<endl<<endl;
 									ifstream ogrenciDersListele;
 									ogrenciDersListele.open("dersEkle.txt",ios::in);
 									string no3;
-									cout<<"Öðrenci No : ";
+									cout<<"Ã–ÄŸrenci No : ";
 									cin>>no3;
 									m=0;
 									do 
@@ -878,10 +878,10 @@ int main(int argc, char** argv) {
 							        	{
 							        		if(no3 == numaraDersEkle) {
 							        			if(m==0){
-							        							cout<<endl<<"*****ALDIÐI DERSLER*****"<<endl;
+							        							cout<<endl<<"*****ALDIÄžI DERSLER*****"<<endl;
 														}
 							        		
-												cout<<"Ders Adý   : "<<dersEkleAd<<endl;
+												cout<<"Ders AdÄ±   : "<<dersEkleAd<<endl;
 												m++; 
 																	  }
 										
@@ -890,7 +890,7 @@ int main(int argc, char** argv) {
 							        } while (!ogrenciDersListele.eof()); 
 							        ogrenciDersListele.close(); 
 							        if(m==0)
-							        cout<<endl<<"Öðrenci bulunamadý!"<<endl;
+							        cout<<endl<<"Ã–ÄŸrenci bulunamadÄ±!"<<endl;
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -901,9 +901,9 @@ int main(int argc, char** argv) {
 							
 							break;
 						}
-					case 4: // öðrenci karnesi(traskript) oluþturma ve görselleþirme
+					case 4: // Ã¶ÄŸrenci karnesi(traskript) oluÅŸturma ve gÃ¶rselleÅŸirme
 						{
-							        cout<<"*****ÖÐRENCÝ TRANSKRÝPT OLUÞTURMA*****"<<endl<<endl;
+							        cout<<"*****Ã–ÄžRENCÄ° TRANSKRÄ°PT OLUÅžTURMA*****"<<endl<<endl;
 									ifstream notEkleTrans; 
 									notEkleTrans.open("notEkle.txt",ios::in);
 									ifstream ogrenciTrans;
@@ -911,26 +911,26 @@ int main(int argc, char** argv) {
 									 
 									int n =0;
 									string no4;
-									cout<<"Öðrenci No:";
+									cout<<"Ã–ÄŸrenci No:";
 									cin>>no4;
 									system("cls");
 									m=0;
-									// ilgili dosyalardan veriler okunur ve ekrana görselliði iyileþtirilerek yazdýrýlýr.
+									// ilgili dosyalardan veriler okunur ve ekrana gÃ¶rselliÄŸi iyileÅŸtirilerek yazdÄ±rÄ±lÄ±r.
 										do 
 							        { 	
 										if(ogrenciTrans>>no>>isim>>soyisim>>sinif>>bolum)
 										{
-											 if (no == no4) // girilen no sistemde kayýtlýysa transkript hazýrlanýr.
+											 if (no == no4) // girilen no sistemde kayÄ±tlÄ±ysa transkript hazÄ±rlanÄ±r.
 											{ 
-												cout<<"\t\t\t\t---TRANSKRÝPT---"<<endl<<endl;
-																cout<<"\t\t/////////////////ÖÐRENCÝ BÝLGÝLERÝ/////////////////"<<endl;
+												cout<<"\t\t\t\t---TRANSKRÄ°PT---"<<endl<<endl;
+																cout<<"\t\t/////////////////Ã–ÄžRENCÄ° BÄ°LGÄ°LERÄ°/////////////////"<<endl;
 																cout<<"\t\t//\t\tNUMARA   : "<<no<<"\t\t //"<<endl;
 																cout<<"\t\t//\t\tAD       : "<<isim<<"\t\t //"<<endl;
 																cout<<"\t\t//\t\tSOYAD    : "<<soyisim<<"\t\t //"<<endl;
 																cout<<"\t\t//\t\tSINIF    : "<<sinif<<"\t\t         //"<<endl;
-																cout<<"\t\t//\t\tBÖLÜM    : "<<bolum<<"\t\t //"<<endl;
+																cout<<"\t\t//\t\tBÃ–LÃœM    : "<<bolum<<"\t\t //"<<endl;
 																cout<<"\t\t///////////////////////////////////////////////////"<<endl<<endl;
-																cout<<"\t\t//////////////////NOT BÝLGÝLERÝ////////////////////"<<endl;
+																cout<<"\t\t//////////////////NOT BÄ°LGÄ°LERÄ°////////////////////"<<endl;
 																cout<<"\t\t//\tDERS "<<"\t\t\t NOT\t\t //"<<endl;
 																cout<<"\t\t//\t---- "<<"\t\t\t ---\t\t //"<<endl;
 													do 
@@ -955,9 +955,9 @@ int main(int argc, char** argv) {
 							        notEkleTrans.close();
 							        
 							        if(m==0 || n==0)
-							       		cout<<endl<<"Kayýtlý öðrenci bulunamadý!";
+							       		cout<<endl<<"KayÄ±tlÄ± Ã¶ÄŸrenci bulunamadÄ±!";
 							        else
-							        	cout<<endl<<"Transkript baþarýyla oluþturuldu.";
+							        	cout<<endl<<"Transkript baÅŸarÄ±yla oluÅŸturuldu.";
 									cout<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 									cin>>donus;
 									if(donus==1){
@@ -966,7 +966,7 @@ int main(int argc, char** argv) {
 									}
 							break;
 						}
-					case 5:// önceki menü
+					case 5:// Ã¶nceki menÃ¼
 						{
 							goto enbas;
 						}
@@ -974,17 +974,17 @@ int main(int argc, char** argv) {
 				break;
 			}//case 4
 		
-		case 5:	// çýkýþ
+		case 5:	// Ã§Ä±kÄ±ÅŸ
 			{
 				return 0;
 			
 			}// case 5
 		default:
-			{	// farklý bir rakam girlirse uyarý verilir
+			{	// farklÄ± bir rakam girlirse uyarÄ± verilir
 				cout<<"Lutfen 1 le 5 arasinda bir rakam giriniz!"<<endl;
 				sleep(3); // 3 saniye beklenir
 				system("cls"); // ekran temizlenir
-				goto enbas; // ve programýn en baþýna yönlendirlir
+				goto enbas; // ve programÄ±n en baÅŸÄ±na yÃ¶nlendirlir
 			}
 	}
 	return 0;
